@@ -1,0 +1,27 @@
+{% extends 'rental/base.html' %}
+{% load static %}
+{% block content %}
+<div class="row row-cols-1 row-cols-md-2">
+  {% for x in x %}
+  <div class="col mb-4">
+    <div class="card">
+      <div class="view overlay">
+       
+        <a href="#!">
+          <div class="mask rgba-white-slight"></div>
+        </a>
+      </div>
+      
+      <div class="card-body">
+        <h2 class="card-title">{{x.title}}</h2>
+        <hr>
+        <p class="card-text">{{x.description}}</p>
+        
+        <h4 class="card-text">Contact no :- {{x.contact}}</h4>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock content %} 

@@ -1,0 +1,29 @@
+{% extends 'rental/base.html' %}
+{% load static %}
+{% block content %}
+<div class="row row-cols-1 row-cols-md-2">
+  {% for post in posts %}
+  <div class="col mb-4">
+    <div class="card">
+      <div class="view overlay">
+        <img class="card-img-top" src="{{post.image.url}}" alt="" height="300px" width="30px">
+        <a href="#!">
+          <div class="mask rgba-white-slight"></div>
+        </a>
+      </div>
+      <hr>
+      <div class="card-body">
+        <h4 class="card-title">{{post.title}}</h4>
+      
+        <p class="card-text">{{post.location}}</p>
+        <p class="card-text">{{post.ownername}}</p>
+        <p class="card-text">{{post.contact}}</p>
+        <a class="btn btn-outline-success" href="{% url 'detail' post.id %}">View</a>
+        <h4 style="display: inline-block; float: right"><strong>₹{{post.price}}</strong></h4>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock content %} 
